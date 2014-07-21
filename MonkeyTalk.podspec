@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   # s.platform     = :ios, "5.0"
 
-  s.source       = { :path => "MonkeyTalk" }
+  s.source       = { :git => "git@github.com:michal-olszewski/MonkeyTalk.git", :tag => "#{s.version}" }
 
   #s.source_files  = "Classes", "Classes/**/*.{h,m}"
   #s.exclude_files = "Classes/Exclude"
@@ -47,12 +47,12 @@ Pod::Spec.new do |s|
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
-   s.libraries = "MonkeyTalk-2.0.5", "stdc++", "sqlite3"
-   s.vendored_libraries = "MonkeyTalk/libMonkeyTalk-2.0.5.a", "MonkeyTalk/extralibs/libMonkeyTalkMediaPlayer-2.0.5.a"
+  s.libraries = "MonkeyTalk-2.0.5", "stdc++", "sqlite3"
+  s.vendored_libraries = "MonkeyTalk/libMonkeyTalk-2.0.5.a", "MonkeyTalk/extralibs/libMonkeyTalkMediaPlayer-2.0.5.a"
 
   # s.requires_arc = true
 
-  #s.xcconfig = { 'OTHER_LDFLAGS' => '-all_load' }
-  # s.dependency "JSONKit", "~> 1.4"
+  s.xcconfig = { 'OTHER_LDFLAGS' => '-all_load' }
+  s.dependency "JSONKit", "~> 1.4"
 
 end
